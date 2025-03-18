@@ -9,7 +9,7 @@ export default function LogoCloud() {
                     <div className="relative py-6">
                         <InfiniteSlider
                             speedOnHover={20}
-                            speed={10000}
+                            speed={200}
                             gap={112}>
                             <div className="flex">
                                 <img
