@@ -1,97 +1,88 @@
-import { Card, CardContent, CardHeader } from '@/components/ui/card'
-import { Settings2, Sparkles, Zap } from 'lucide-react'
-import type { ReactNode } from 'react'
+import { featuresSection } from "@/static"
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { Button } from "./ui/button";
 
-export default function Features() {
+interface Feature {
+    id: string;
+    title: string;
+    description: string;
+    image: string;
+}
+
+interface Feature13Props {
+    heading?: string;
+    features?: Feature[];
+}
+
+const Features = ({
+    features = [
+        {
+            id: "feature-1",
+            title: "Abertura e Legalização ",
+            description:
+                "Nós te ajudamos a ter a sua empresa funcionando de maneira totalmente regularizada, para não haver complicação nas suas atividades. ",
+            image: "/feat-4.jpg",
+        },
+        {
+            id: "feature-2",
+            title: "Gestão Fiscal",
+            description:
+                "A gestão fiscal é um fator fundamental para o sucesso do seu negócio. Por meio dela, os nossos especialistas buscam soluções legais para a diminuição dos seus impostos. ",
+            image: "/feat-2.jpg",
+        }, {
+            id: "feature-3",
+            title: "Gestão Pessoal",
+            description:
+                "Cuidar da saúde da sua empresa é cuidar também da situação dos seus colaboradores. E com as nossas soluções, você garante que tudo será assegurado.",
+            image: "/feat-3.jpg",
+        }, {
+            id: "feature-4",
+            title: "Gestão Contábil ",
+            description:
+                "Economize seu tempo, contrate os nossos serviços de gestão contábil e tenha profissionais qualificados assegurando a proteção da sua contabilidade. ",
+            image: "/feat-1.jpg",
+        },
+    ],
+}: Feature13Props) => {
     return (
-        <section className="py-16 md:py-32" id='servicos'>
-            <div className="@container mx-auto max-w-5xl px-6">
-                <div className="text-center">
-                    <h2 className="text-balance text-primary text-4xl lg:text-5xl">Soluções Contábeis para Pessoas e Empresas</h2>
-                    <p className="mt-4">Facilitamos sua vida financeira com serviços contábeis especializados.</p>
-                </div>
-                <div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-8 grid max-w-sm gap-6 [--color-background:var(--color-muted)] [--color-card:var(--color-muted)] *:text-center md:mt-16 dark:[--color-muted:var(--color-zinc-900)]">
-                    <Card className="group border-0 shadow-none">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Zap className="size-6" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Consultoria Contábil</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm">Orientação especializada para otimizar sua contabilidade e garantir conformidade fiscal.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="group border-0 shadow-none">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Settings2 className="size-6" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Planejamento Financeiro</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="mt-3 text-sm">Ajuda na organização e planejamento das suas finanças para alcançar estabilidade e crescimento.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="group border-0 shadow-none">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Sparkles className="size-6" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Gestão Fiscal</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="mt-3 text-sm">Redução de impostos e regularização fiscal para você e sua empresa.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="group border-0 shadow-none">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Zap className="size-6" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Abertura e Legalização</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="text-sm">Facilitamos o processo de abertura de empresas e garantimos sua regularização.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="group border-0 shadow-none">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Settings2 className="size-6" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Declaração de Imposto de Renda</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="mt-3 text-sm">Cuidamos da sua declaração para evitar erros e garantir que você pague apenas o necessário.</p>
-                        </CardContent>
-                    </Card>
-
-                    <Card className="group border-0 shadow-none">
-                        <CardHeader className="pb-3">
-                            <CardDecorator>
-                                <Sparkles className="size-6" aria-hidden />
-                            </CardDecorator>
-                            <h3 className="mt-6 font-medium">Educação Financeira</h3>
-                        </CardHeader>
-                        <CardContent>
-                            <p className="mt-3 text-sm">Aprenda a gerenciar melhor seu dinheiro e conquistar sua independência financeira.</p>
-                        </CardContent>
-                    </Card>
+        <section className="lg:-mt-36">
+            <div className="container max-w-7xl mx-auto bg-muted p-10 rounded-xl">
+                <p className="mb-4 text-primary">{featuresSection.small}</p>
+                <h2 className="text-3xl font-medium lg:text-4xl">{featuresSection.header}</h2>
+                <div className="mt-10 grid gap-9 lg:grid-cols-2">
+                    {features.map((feature) => (
+                        <div
+                            key={feature.id}
+                            className="flex flex-col justify-between rounded-lg bg-background"
+                        >
+                            <div className="flex justify-between gap-10 border-b">
+                                <div className="flex flex-col justify-between gap-14 py-6 pl-4 md:py-10 md:pl-8 lg:justify-normal">
+                                    <Button className="w-fit" variant="secondary">
+                                        SAIBA MAIS
+                                        <ArrowRight />
+                                    </Button>
+                                    <h3 className="text-2xl md:text-4xl">{feature.title}</h3>
+                                </div>
+                                <div className="md:1/3 w-2/5 shrink-0 rounded-r-lg border-l">
+                                    <Image
+                                        width={400}
+                                        height={400}
+                                        src={feature.image}
+                                        alt={feature.title}
+                                        className="rounded-tr-xl h-full w-full object-cover"
+                                    />
+                                </div>
+                            </div>
+                            <div className="p-4 text-muted-foreground md:p-8">
+                                {feature.description}
+                            </div>
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-const CardDecorator = ({ children }: { children: ReactNode }) => (
-    <div className="relative mx-auto size-36 duration-200 [--color-border:color-mix(in_oklab,var(--color-zinc-950)10%,transparent)] group-hover:[--color-border:color-mix(in_oklab,var(--color-zinc-950)20%,transparent)] dark:[--color-border:color-mix(in_oklab,var(--color-white)15%,transparent)] dark:group-hover:bg-white/5 dark:group-hover:[--color-border:color-mix(in_oklab,var(--color-white)20%,transparent)]">
-        <div aria-hidden className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:24px_24px]" />
-        <div aria-hidden className="bg-radial to-background absolute inset-0 from-transparent to-75%" />
-        <div className="dark:bg-background absolute inset-0 m-auto flex size-12 items-center justify-center border-l border-t bg-white">{children}</div>
-    </div>
-)
+export default Features

@@ -1,32 +1,40 @@
 'use client'
 import { Button } from '@/components/ui/button'
-import { Mail, Menu, X } from 'lucide-react'
+import { cn } from '@/lib/utils'
+import { menuItems } from '@/static'
+import { Landmark, Menu, X } from 'lucide-react'
+import { motion, useScroll } from 'motion/react'
 import Link from 'next/link'
 import React from 'react'
 import { Logo } from './logo'
 
-const menuItems = [
-    { name: 'Início', href: '#inicio' },
-    { name: 'Sobre', href: '#sobre' },
-    { name: 'Serviços', href: '#servicos' },
-    { name: 'Contato', href: '#contato' },
-]
-
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
+    const [scrolled, setScrolled] = React.useState(false)
+    const { scrollYProgress } = useScroll()
+
+    React.useEffect(() => {
+        const unsubscribe = scrollYProgress.on('change', (latest) => {
+            setScrolled(latest > 0.05)
+        })
+        return () => unsubscribe()
+    }, [scrollYProgress])
+
     return (
         <header>
             <nav
                 data-state={menuState && 'active'}
-                className="bg-background/50 fixed z-20 w-full border-b backdrop-blur-3xl">
-                <div className="mx-auto max-w-6xl px-6 transition-all duration-300">
-                    <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+                className="fixed z-20 w-full pt-2">
+                <div className={cn('mx-auto max-w-7xl rounded-3xl px-6 transition-all duration-300 lg:px-12 text-background', scrolled && 'bg-background/50 text-foreground backdrop-blur-2xl')}>
+                    <motion.div
+                        key={1}
+                        className={cn('relative flex flex-wrap items-center justify-between gap-6 py-3 duration-200 lg:gap-0 lg:py-6', scrolled && 'lg:py-4')}>
                         <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
                             <Link
                                 href="/"
                                 aria-label="home"
                                 className="flex items-center space-x-2">
-                                <Logo className='rounded-md' />
+                                <Logo />
                             </Link>
 
                             <button
@@ -39,12 +47,14 @@ export const HeroHeader = () => {
                             </button>
 
                             <div className="hidden lg:block">
-                                <ul className="flex gap-8 text-sm">
-                                    {menuItems.map((item, index) => (
+                                <ul className="flex gap-8 text-base font-medium">
+                                    {menuItems.map((item) => (
                                         <li key={item.name}>
                                             <Link
                                                 href={item.href}
-                                                className="text-muted-foreground hover:text-accent-foreground block duration-150">
+                                                className={cn("hover:text-secondary block duration-150", {
+                                                    'hover:text-primary': scrolled
+                                                })}>
                                                 <span>{item.name}</span>
                                             </Link>
                                         </li>
@@ -57,7 +67,7 @@ export const HeroHeader = () => {
                             <div className="lg:hidden">
                                 <ul className="space-y-6 text-base">
                                     {menuItems.map((item) => (
-                                        <li key={item.name}>
+                                        <li key={item.href}>
                                             <Link
                                                 href={item.href}
                                                 className="text-muted-foreground hover:text-accent-foreground block duration-150">
@@ -70,15 +80,16 @@ export const HeroHeader = () => {
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                                 <Button
                                     asChild
-                                    variant="default">
+                                    variant="default"
+                                >
                                     <Link href="#">
-                                        <span>Agendar</span>
-                                        <Mail className="size-4" />
+                                        <span>Solicitar Proposta</span>
+                                        <Landmark />
                                     </Link>
                                 </Button>
                             </div>
                         </div>
-                    </div>
+                    </motion.div>
                 </div>
             </nav>
         </header>

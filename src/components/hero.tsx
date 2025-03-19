@@ -1,68 +1,48 @@
 import { HeroHeader } from '@/components/header'
 import { Button } from '@/components/ui/button'
-import { ArrowRight, Landmark, Mail } from 'lucide-react'
+import { hero } from '@/static'
+import { ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { BoxReveal } from './magicui/box-reveal'
 
 export default function HeroSection() {
     return (
         <>
             <HeroHeader />
-            <main className="overflow-x-hidden pt-12" id='inicio'>
-                <section>
-                    <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-24">
-                        <div className="relative mx-auto flex max-w-6xl flex-col-reverse px-6 lg:block">
-                            <div className="mx-auto max-w-lg lg:ml-0 lg:w-[50%] text-left">
-                                <BoxReveal boxColor={"#2a51404e"} duration={0.5}>
-                                    <Link href="/" className="rounded-(--radius) flex w-fit items-center gap-2 border p-1 pr-3 mx-auto lg:mx-0">
-                                        <span className="bg-muted rounded-[calc(var(--radius)-0.25rem)] px-2 py-1 text-xs">Contadora</span>
-                                        <span className="text-sm">Janaína Moraes</span>
-                                        <span className="bg-(--color-border) block h-4 w-px" />
-
-                                        <Landmark className="size-4" />
-                                    </Link>
-                                </BoxReveal>
-                                <BoxReveal boxColor={"#2a51404e"} duration={0.5}>
-                                    <h1 className="mt-4 max-w-2xl text-balance text-5xl font-medium md:text-6xl lg:mt-8 xl:text-7xl">Aprenda a controlar seu <strong className=''>dinheiro.</strong></h1>
-                                </BoxReveal>
-                                <BoxReveal boxColor={"#2a51404e"} duration={0.7}>
-                                    <p className="mt-8 max-w-2xl text-pretty text-lg">Leciono aulas práticas de educação financeira para transformar sua relação com o dinheiro. Aprenda a planejar, economizar e investir de forma inteligente.</p>
-                                </BoxReveal>
-                                <BoxReveal boxColor={"#2a51404e"} duration={0.7}>
-                                    <div className="mt-12 flex flex-col justify-center gap-2 sm:flex-row lg:justify-start">
-                                        <Button
-                                            asChild
-                                            size="lg"
-                                            className="px-5 text-base">
-                                            <Link href="#">
-                                                <span>Agendar Consultoria</span>
-                                                <Mail className="size-4 translate-y-[1px]" />
-                                            </Link>
-                                        </Button>
-                                        <Button
-                                            key={2}
-                                            asChild
-                                            size="lg"
-                                            variant="secondary"
-                                            className="text-base">
-                                            <Link href="#">
-                                                <span>Conheça mais</span>
-                                                <ArrowRight className="size-4 translate-y-[1px]" />
-                                            </Link>
-                                        </Button>
-                                    </div>
-                                </BoxReveal>
+            <main className="overflow-x-hidden">
+                <section className='relative text-background'>
+                    <div className="py-24 md:pb-32 lg:pb-72 lg:pt-36">
+                        <div className="relative mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
+                            <div className="mx-auto max-w-lg text-center lg:ml-0 lg:max-w-full lg:text-left">
+                                <h1 className="mt-8 text-balance text-5xl md:text-6xl lg:mt-16 xl:text-7xl">{hero.h1}</h1>
+                                <p className="mt-8 text-balance text-lg">{hero.h2}</p>
+                                <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
+                                    <Button
+                                        asChild
+                                        variant="default"
+                                        size="lg"
+                                        className="h-12 bg-accent text-foreground hover:bg-background rounded-full px-10 pl-5 pr-3 text-base">
+                                        <Link href="#link">
+                                            <span className="text-nowrap">{hero.actions.main}</span>
+                                            <ChevronRight className="ml-1" />
+                                        </Link>
+                                    </Button>
+                                    <Button
+                                        key={2}
+                                        asChild
+                                        size="lg"
+                                        variant="ghost"
+                                        className="h-12 rounded-full hover:text-background hover:bg-background/35 px-5 text-base">
+                                        <Link href="#link">
+                                            <span className="text-nowrap">{hero.actions.secondary}</span>
+                                        </Link>
+                                    </Button>
+                                </div>
                             </div>
-                            <Image
-                                className="z-10 drop-shadow-xl rounded-2xl order-first ml-auto mt-14 w-full object-cover lg:absolute lg:inset-0 lg:-right-20 lg:-top-20 lg:order-last lg:h-max lg:w-[50%] lg:object-contain"
-                                src="/chair.png"
-                                alt="Janaína Moraes"
-                                height="922"
-                                width="739"
-                            />
                         </div>
+                        <Image alt='Hero' width={1920} height={1080} className="rounded-b-4xl absolute -z-10 inset-0 object-cover w-full h-full" src="/content.jpg" />
+                        <div className="absolute -z-10 inset-0 bg-primary opacity-70 rounded-b-4xl" />
                     </div>
                 </section>
             </main>

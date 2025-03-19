@@ -28,7 +28,7 @@ const ibmPlexSans = IBM_Plex_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Janaína Moraes",
+  title: "Janaína Moraes - Contabilidade",
   description: "Educação Financeira, Contabilidade e BPO Financeiro",
 };
 
