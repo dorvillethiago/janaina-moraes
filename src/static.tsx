@@ -131,3 +131,18 @@ export const information2 = {
 	invert: true,
 	reverse: true,
 }
+
+export const cta = {
+	heading: "Pronto para começar?",
+	description: "Junte-se a milhares de clientes satisfeitos que usam nossa consultoria para construir o futuro.",
+	buttons: {
+		primary: {
+			text: "Agendar Consultoria",
+			url: "#",
+		},
+		secondary: {
+			text: "Abrir Empresa",
+			url: "#",
+		},
+	},
+}
