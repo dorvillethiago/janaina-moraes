@@ -31,6 +31,21 @@ const ibmPlexSans = IBM_Plex_Sans({
 export const metadata: Metadata = {
   title: "Janaína Moraes - Contabilidade",
   description: "Educação Financeira, Contabilidade e BPO Financeiro",
+  keywords: "contabilidade, educação financeira, bpo financeiro, consultoria financeira",
+  authors: {
+    name: "Janaína Moraes",
+  },
+  openGraph: {
+    locale: "pt_BR",
+    siteName: "Janaína Moraes - Contabilidade",
+    type: "website",
+    description: "Educação Financeira, Contabilidade e BPO Financeiro",
+    images: "/icon.png"
+  },
+  robots: {
+    index: true,
+    follow: false,
+  }
 };
 
 export default function RootLayout({
@@ -39,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="pt_BR" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${lora.variable} ${ibmPlexSans.variable} antialiased min-h-full`}
       >
