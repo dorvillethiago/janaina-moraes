@@ -19,7 +19,7 @@ const Features = ({
     features = [
         {
             id: "feature-1",
-            title: "Abertura e Legalização ",
+            title: "Legalização ",
             description:
                 "Nós te ajudamos a ter a sua empresa funcionando de maneira totalmente regularizada, para não haver complicação nas suas atividades. ",
             image: "/feat-4.jpg",
@@ -47,7 +47,7 @@ const Features = ({
 }: Feature13Props) => {
     return (
         <section className="lg:-mt-36">
-            <div className="container max-w-7xl mx-auto bg-muted p-10 rounded-xl">
+            <div className="container max-w-7xl mx-auto bg-muted drop-shadow-2xl p-10 rounded-xl">
                 <p className="mb-4 text-primary">{featuresSection.small}</p>
                 <h2 className="text-3xl font-medium lg:text-4xl">{featuresSection.header}</h2>
                 <div className="mt-10 grid gap-9 lg:grid-cols-2">
