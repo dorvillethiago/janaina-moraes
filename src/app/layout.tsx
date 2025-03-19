@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Sans, Inter, Lora } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/providers/theme";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -38,11 +39,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt" className="scroll-smooth">
+    <html lang="pt" className="scroll-smooth" suppressHydrationWarning>
       <body
         className={`${inter.variable} ${lora.variable} ${ibmPlexSans.variable} antialiased min-h-full`}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

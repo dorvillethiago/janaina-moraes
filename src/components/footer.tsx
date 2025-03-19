@@ -49,7 +49,7 @@ export default function FooterSection() {
                         </svg>
                     </Link>
                 </div>
-                <span className="text-background block text-center text-sm"> © {new Date().getFullYear()} Janína Moraes, Todos Direitos Reservados</span>
+                <span className="text-background block text-center text-sm"> © {new Date().getFullYear()} Janaína Moraes, Todos Direitos Reservados</span>
             </div>
         </footer>
     )

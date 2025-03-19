@@ -2,16 +2,22 @@
 import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { menuItems } from '@/static'
-import { Landmark, Menu, X } from 'lucide-react'
+import { Landmark, Menu, Moon, Sun, X } from 'lucide-react'
 import { motion, useScroll } from 'motion/react'
 import Link from 'next/link'
 import React from 'react'
 import { Logo } from './logo'
+import { useTheme } from 'next-themes'
 
 export const HeroHeader = () => {
     const [menuState, setMenuState] = React.useState(false)
     const [scrolled, setScrolled] = React.useState(false)
     const { scrollYProgress } = useScroll()
+    const { setTheme, theme } = useTheme()
+
+    function handleClick() {
+        setTheme(theme === 'light' ? 'dark' : 'light')
+    }
 
     React.useEffect(() => {
         const unsubscribe = scrollYProgress.on('change', (latest) => {
@@ -78,6 +84,11 @@ export const HeroHeader = () => {
                                 </ul>
                             </div>
                             <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                                <Button onClick={handleClick} variant="default" size="icon">
+                                    <Sun className="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
+                                    <Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
+                                    <span className="sr-only">Toggle theme</span>
+                                </Button>
                                 <Button
                                     asChild
                                     variant="default"
