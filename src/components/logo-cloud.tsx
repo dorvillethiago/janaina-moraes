@@ -13,7 +13,7 @@ export default function LogoCloud() {
                             gap={112}>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-16 w-fit dark:invert rounded-lg"
+                                    className="mx-auto h-16 w-fit rounded-lg"
                                     src="https://yt3.googleusercontent.com/U-ggX2hexlWmMxES7z2zgN7UApUY29YuoXvVT0DcSYQpdOx-UuD-IU_fuRfgPnI5WmJWXksR_w=s900-c-k-c0x00ffffff-no-rj"
                                     alt="Receita Federal"
                                     height="20"
@@ -23,7 +23,7 @@ export default function LogoCloud() {
 
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-16 w-fit dark:invert rounded-lg"
+                                    className="mx-auto h-16 w-fit rounded-lg"
                                     src="https://tm.ibxk.com.br/2023/02/14/14222832154001.jpg?ims=1200x675"
                                     alt="Simples Nacional"
                                     height="16"
@@ -32,7 +32,7 @@ export default function LogoCloud() {
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-16 w-fit dark:invert rounded-lg"
+                                    className="mx-auto h-16 w-fit rounded-lg"
                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgkx1cx-YKS7xIG2mE7w3BvH_ne1fbswaIuA&s"
                                     alt="Febraban"
                                     height="16"
@@ -41,7 +41,7 @@ export default function LogoCloud() {
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-16 w-fit dark:invert rounded-lg"
+                                    className="mx-auto h-16 w-fit rounded-lg"
                                     src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_mkAJVObJdyamGeUymPBCmMD__yieL5D7cA&s"
                                     alt="B3"
                                     height="20"
@@ -50,7 +50,7 @@ export default function LogoCloud() {
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-16 w-fit dark:invert rounded-lg"
+                                    className="mx-auto h-16 w-fit rounded-lg"
                                     src="https://pa.lojavirtualsebrae.com.br/static/images/card_box.jpg"
                                     alt="SEBRAE"
                                     height="20"
@@ -59,7 +59,7 @@ export default function LogoCloud() {
                             </div>
                             <div className="flex">
                                 <img
-                                    className="mx-auto h-16 w-fit dark:invert rounded-lg"
+                                    className="mx-auto h-16 w-fit rounded-lg"
                                     src="https://cfc.org.br/wp-content/uploads/2024/01/af_logo_horizontal_crc-al_jun_14_curvas-1024x725.png"
                                     alt="CRC/AL"
                                     height="20"

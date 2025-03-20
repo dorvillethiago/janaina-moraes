@@ -128,8 +128,6 @@ export const information2 = {
 		jsx: <>Agendar Consultoria <ArrowRight /></>,
 	},
 	imageSrc: "/feat-2.jpg",
-	invert: true,
-	reverse: true,
 }
 
 export const cta = {
