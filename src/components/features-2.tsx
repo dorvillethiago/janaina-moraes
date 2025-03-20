@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader } from '@/components/ui/card';
 import { ArrowRight, Settings2, Sparkles, Zap } from 'lucide-react';
+import Image from 'next/image';
 import type { ReactNode } from 'react';
 import { Button } from './ui/button';
 
@@ -28,7 +29,9 @@ export default function Features2() {
     ];
 
     return (
-        <section className="bg-primary relative text-background py-16 md:py-32 dark:bg-transparent">
+        <section className="bg-primary/70 relative text-background py-16 md:py-32 dark:bg-transparent">
+            <Image alt='Hero' width={1920} height={1080} className="rounded-b-4xl absolute -z-10 inset-0 object-cover w-full h-full" src="/feat-1.jpg" />
+            <div className="absolute -z-10 inset-0 bg-primary opacity-70 rounded-b-4xl" />
             <div className="mx-auto max-w-7xl px-4 xl:px-0">
                 <div className="text-left">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Somos especialistas em diversos setores</h2>
