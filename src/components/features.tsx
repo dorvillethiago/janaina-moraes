@@ -46,7 +46,7 @@ const Features = ({
     ],
 }: Feature13Props) => {
     return (
-        <section className="lg:-mt-36">
+        <section className="lg:-mt-36" id="servicos">
             <div className="container max-w-7xl mx-auto bg-muted drop-shadow-2xl p-4 lg:p-10 rounded-xl">
                 <p className="mb-4 text-primary">{featuresSection.small}</p>
                 <h2 className="text-3xl font-medium lg:text-4xl">{featuresSection.header}</h2>

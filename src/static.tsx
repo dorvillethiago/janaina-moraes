@@ -105,6 +105,7 @@ export const testimonials = [
 ]
 
 export const information1 = {
+	id: "sobre",
 	title: "Uma contabilidade criada para descomplicar a burocracia para você! ",
 	description: [
 		"Com mais de 10 anos de atuação, nossos profissionais são capacitados para atender as demandas burocráticas da sua empresa, e para falar a língua que você entende! ",

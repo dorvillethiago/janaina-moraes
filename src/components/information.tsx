@@ -14,7 +14,8 @@ interface InformationProps {
     callToAction?: {
         jsx: React.ReactNode;
         href: string;
-    }
+    },
+    id?: string;
 }
 
 const Information: React.FC<InformationProps> = ({
@@ -24,10 +25,11 @@ const Information: React.FC<InformationProps> = ({
     title,
     description,
     invert = false,
-    reverse = false
+    reverse = false,
+    id,
 }) => {
     return (
-        <div className={cn({
+        <div id={id} className={cn({
             "bg-background": !invert,
             "bg-primary": invert,
         })}>
