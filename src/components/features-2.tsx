@@ -33,11 +33,11 @@ export default function Features2() {
             <Image alt='Hero' width={1920} height={1080} className="rounded-b-4xl absolute -z-10 inset-0 object-cover w-full h-full" src="/feat-1.jpg" />
             <div className="absolute -z-10 inset-0 bg-primary opacity-70 rounded-b-4xl" />
             <div className="mx-auto max-w-7xl px-4 xl:px-0">
-                <div className="text-left">
+                <div className="text-center md:text-left">
                     <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Somos especialistas em diversos setores</h2>
                     <p className="mt-4">Nossas especialidades</p>
                 </div>
-                <div className="gap-6 mt-16 flex">
+                <div className="gap-6 mt-16 flex flex-wrap justify-center md:justify-start">
                     {features.map((feature) => (
                         <FeatureCard key={feature.title} {...feature} />
                     ))}

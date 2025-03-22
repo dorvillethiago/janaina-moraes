@@ -63,16 +63,13 @@ const Information: React.FC<InformationProps> = ({
                         )
                     }
                 </div>
-                <div className="flex-1">
+                <div className={cn("flex-1 flex justify-center items-center md:block")}>
                     <Image
                         width={1000}
                         height={1000}
                         src={imageSrc}
                         alt={title}
-                        className={cn("w-[500px] aspect-square object-cover rounded-lg drop-shadow-2xl", {
-                            "mr-auto": reverse,
-                            "ml-auto": !reverse,
-                        })}
+                        className={cn("w-[500px] aspect-square object-cover rounded-lg drop-shadow-2xl")}
                     />
                 </div>
             </div>
