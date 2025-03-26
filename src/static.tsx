@@ -18,8 +18,8 @@ export const hero = {
 };
 
 export const featuresSection = {
-	header: "Nossos serviços",
-	small: "Contabilidade ao seu alcance",
+	header: "O que podemos fazer por você?",
+	small: "Nossos Serviços",
 };
 
 export type Testimonial = {

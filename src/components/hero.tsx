@@ -16,7 +16,7 @@ export default function HeroSection() {
             <HeroHeader />
             <main className="overflow-x-hidden" id='inicio'>
                 <section className='relative text-background'>
-                    <div className="py-24 md:pb-32 lg:pb-72 lg:pt-36">
+                    <div className="py-24 md:pb-32 lg:pb-56 lg:pt-36">
                         <div className="relative mx-auto flex max-w-7xl flex-col px-6 lg:block lg:px-12">
                             <div className="mx-auto max-w-lg text-center lg:ml-0 lg:text-left lg:max-w-3xl">
                                 <h1 className="mt-8 text-5xl md:text-6xl lg:mt-16 xl:text-7xl">
