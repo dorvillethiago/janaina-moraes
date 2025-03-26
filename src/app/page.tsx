@@ -7,6 +7,7 @@ import HeroSection from "@/components/hero";
 import Information from "@/components/information";
 import LogoCloud from "@/components/logo-cloud";
 import WallOfLoveSection from "@/components/testimonials";
+import { WhatsappCallToAction } from "@/components/whatsapp";
 import { cta, information1, information2 } from "@/static";
 
 export default function Page() {
@@ -21,5 +22,6 @@ export default function Page() {
         <Contact />
         <Cta {...cta} />
         <FooterSection />
+        <WhatsappCallToAction />
     </>
 }

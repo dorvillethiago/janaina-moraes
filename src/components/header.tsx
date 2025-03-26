@@ -91,7 +91,7 @@ export const HeroHeader = () => {
                                 </Button>
                                 <Button
                                     asChild
-                                    variant="default"
+                                    variant="accent"
                                 >
                                     <Link href="#">
                                         <span>Solicitar Proposta</span>

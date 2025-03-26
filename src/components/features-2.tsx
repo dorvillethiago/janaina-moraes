@@ -55,7 +55,7 @@ const FeatureCard = ({ icon, title, description }: { icon: ReactNode; title: str
         </CardHeader>
         <CardContent>
             <p className="text-sm">{description}</p>
-            <Button variant="secondary" className="mt-10">
+            <Button variant="accent" className="mt-10">
                 Saiba mais
                 <ArrowRight />
             </Button>

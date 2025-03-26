@@ -44,7 +44,7 @@ const Cta = ({
                     </div>
                     <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
                         {buttons.secondary && (
-                            <Button variant="default" asChild>
+                            <Button variant="accent" asChild>
                                 <a href={buttons.secondary.url}>{buttons.secondary.text}</a>
                             </Button>
                         )}

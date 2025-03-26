@@ -58,7 +58,7 @@ const Features = ({
                         >
                             <div className="flex justify-between gap-10 border-b">
                                 <div className="flex flex-col justify-between gap-14 py-6 pl-4 md:py-10 md:pl-8 lg:justify-normal">
-                                    <Button className="w-fit" variant="secondary">
+                                    <Button className="w-fit" variant="accent">
                                         SAIBA MAIS
                                         <ArrowRight />
                                     </Button>

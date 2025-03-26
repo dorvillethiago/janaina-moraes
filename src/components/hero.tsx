@@ -48,7 +48,7 @@ export default function HeroSection() {
                                             asChild
                                             size="lg"
                                             variant="ghost"
-                                            className="h-12 rounded-full hover:text-background hover:bg-background/35 px-5 text-base">
+                                            className="h-12 rounded-full px-5 text-base hover:bg-white/50 border-white/20 border backdrop-blur-sm">
                                             <Link href="#link">
                                                 <span className="text-nowrap">{hero.actions.secondary}</span>
                                             </Link>
