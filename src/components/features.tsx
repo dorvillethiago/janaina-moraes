@@ -50,11 +50,11 @@ const Features = ({
             <div className="container max-w-7xl text-center mx-auto bg-muted drop-shadow-2xl p-4 lg:p-10 rounded-xl">
                 <p className="mb-4 text-primary">{featuresSection.small}</p>
                 <h2 className="text-3xl font-medium lg:text-4xl">{featuresSection.header}</h2>
-                <div className="mt-10 flex gap-8">
+                <div className="mt-10 flex flex-wrap justify-center gap-8">
                     {features.map((feature) => (
                         <div
                             key={feature.id}
-                            className="flex flex-col items-center gap-3 justify-between rounded-lg bg-background p-2"
+                            className="flex max-w-[260px] flex-col items-center gap-3 justify-between rounded-lg bg-background p-2"
                         >
                             <Image
                                 width={400}
